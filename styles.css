@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+    use these colors:
+        #425E6B
+        #61A5A0
+        #FAE399
+        #F5BB84
+        #D48063
+*/
+
+body {
+  background-color: #fae399;
+  display: flex;
+  flex-direction: column;
+}
+
+#calc-body {
+  width: 630px;
+  height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+
+  display: flex;
+  background-color: #425e6b;
+}
