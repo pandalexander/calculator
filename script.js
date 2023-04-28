@@ -29,5 +29,3 @@ const operate = function (firstNumber, operator, secondNumber) {
     return divide(firstNumber, secondNumber);
   }
 };
-
-console.log(operate(firstNumber, operator, secondNumber));
