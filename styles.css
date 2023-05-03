@@ -18,15 +18,16 @@ body {
   background-color: #425e6b;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45px;
 }
 
 #calc-body {
+  border: solid black 2px;
   background-color: #61a5a0;
-  width: 640px;
+  width: 600px;
   height: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
