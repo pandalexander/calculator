@@ -66,13 +66,7 @@ clearButton.addEventListener("click", function () {
 deleteButton.addEventListener("click", function () {
   currentDisplayValue = currentDisplayValue.slice(0, -1);
   currentDisplayElement.textContent = currentDisplayValue;
-  if (currentDisplayValue.substr(-1) == ".") {
-    currentDisplayValue = currentDisplayValue.slice(0, -1);
-    currentDisplayElement.textContent = currentDisplayValue;
-  }
 });
-
-console.log(currentDisplayValue.substr(-1));
 
 one.addEventListener("click", function () {
   changeDisplayValue(+this.textContent);
