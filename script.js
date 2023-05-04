@@ -64,8 +64,13 @@ let minusSymbol = document.getElementById("minus-symbol");
 let equalSymbol = document.getElementById("equal-symbol");
 let plusSymbol = document.getElementById("plus-symbol");
 
-clear.addEventListener("click", function () {
+clearButton.addEventListener("click", function () {
   currentDisplayValue = "";
+  currentDisplayElement.textContent = +currentDisplayValue;
+});
+
+deleteButton.addEventListener("click", function () {
+  currentDisplayValue = currentDisplayValue.slice(0, -1);
   currentDisplayElement.textContent = +currentDisplayValue;
 });
 
