@@ -41,6 +41,9 @@ let changeDisplayValue = function (number) {
   currentDisplayElement.textContent = +currentDisplayValue;
 };
 
+let clearButton = document.getElementById("clear");
+let deleteButton = document.getElementById("delete");
+
 let calcButtonsParent = document.getElementById("calc-buttons");
 
 let one = document.getElementById("one");
@@ -53,12 +56,18 @@ let seven = document.getElementById("seven");
 let eight = document.getElementById("eight");
 let nine = document.getElementById("nine");
 let zero = document.getElementById("zero");
+
 let periodSymbol = document.getElementById("period-symbol");
 let divideSymbol = document.getElementById("divide-symbol");
 let multiplySymbol = document.getElementById("multiply-symbol");
 let minusSymbol = document.getElementById("minus-symbol");
 let equalSymbol = document.getElementById("equal-symbol");
 let plusSymbol = document.getElementById("plus-symbol");
+
+clear.addEventListener("click", function () {
+  currentDisplayValue = "";
+  currentDisplayElement.textContent = +currentDisplayValue;
+});
 
 one.addEventListener("click", function () {
   changeDisplayValue(+this.textContent);
