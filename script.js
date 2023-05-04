@@ -29,3 +29,11 @@ const operate = function (firstNumber, operator, secondNumber) {
     return divide(firstNumber, secondNumber);
   }
 };
+
+let currentDisplayValue = "";
+
+let currentDisplayElement = document.getElementById("display-current");
+
+currentDisplayElement.textContent = +currentDisplayValue;
+
+console.log(currentDisplayElement.textContent);
