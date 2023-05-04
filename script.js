@@ -36,4 +36,57 @@ let currentDisplayElement = document.getElementById("display-current");
 
 currentDisplayElement.textContent = +currentDisplayValue;
 
-console.log(currentDisplayElement.textContent);
+let changeDisplayValue = function (number) {
+  currentDisplayValue += number;
+  currentDisplayElement.textContent = +currentDisplayValue;
+};
+
+let calcButtonsParent = document.getElementById("calc-buttons");
+
+let one = document.getElementById("one");
+let two = document.getElementById("two");
+let three = document.getElementById("three");
+let four = document.getElementById("four");
+let five = document.getElementById("five");
+let six = document.getElementById("six");
+let seven = document.getElementById("seven");
+let eight = document.getElementById("eight");
+let nine = document.getElementById("nine");
+let zero = document.getElementById("zero");
+let periodSymbol = document.getElementById("period-symbol");
+let divideSymbol = document.getElementById("divide-symbol");
+let multiplySymbol = document.getElementById("multiply-symbol");
+let minusSymbol = document.getElementById("minus-symbol");
+let equalSymbol = document.getElementById("equal-symbol");
+let plusSymbol = document.getElementById("plus-symbol");
+
+one.addEventListener("click", function () {
+  changeDisplayValue(+this.textContent);
+});
+two.addEventListener("click", function () {
+  changeDisplayValue(+this.textContent);
+});
+three.addEventListener("click", function () {
+  changeDisplayValue(+this.textContent);
+});
+four.addEventListener("click", function () {
+  changeDisplayValue(+this.textContent);
+});
+five.addEventListener("click", function () {
+  changeDisplayValue(+this.textContent);
+});
+six.addEventListener("click", function () {
+  changeDisplayValue(+this.textContent);
+});
+seven.addEventListener("click", function () {
+  changeDisplayValue(+this.textContent);
+});
+eight.addEventListener("click", function () {
+  changeDisplayValue(+this.textContent);
+});
+nine.addEventListener("click", function () {
+  changeDisplayValue(+this.textContent);
+});
+zero.addEventListener("click", function () {
+  changeDisplayValue(+this.textContent);
+});
