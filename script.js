@@ -36,9 +36,9 @@ let currentDisplayElement = document.getElementById("display-current");
 
 currentDisplayElement.textContent = +currentDisplayValue;
 
-let changeDisplayValue = function (number) {
-  currentDisplayValue += number;
-  currentDisplayElement.textContent = +currentDisplayValue;
+let changeDisplayValue = function (item) {
+  currentDisplayValue += item;
+  currentDisplayElement.textContent = currentDisplayValue;
 };
 
 let clearButton = document.getElementById("clear");
@@ -56,13 +56,7 @@ let seven = document.getElementById("seven");
 let eight = document.getElementById("eight");
 let nine = document.getElementById("nine");
 let zero = document.getElementById("zero");
-
 let periodSymbol = document.getElementById("period-symbol");
-let divideSymbol = document.getElementById("divide-symbol");
-let multiplySymbol = document.getElementById("multiply-symbol");
-let minusSymbol = document.getElementById("minus-symbol");
-let equalSymbol = document.getElementById("equal-symbol");
-let plusSymbol = document.getElementById("plus-symbol");
 
 clearButton.addEventListener("click", function () {
   currentDisplayValue = "";
@@ -71,8 +65,14 @@ clearButton.addEventListener("click", function () {
 
 deleteButton.addEventListener("click", function () {
   currentDisplayValue = currentDisplayValue.slice(0, -1);
-  currentDisplayElement.textContent = +currentDisplayValue;
+  currentDisplayElement.textContent = currentDisplayValue;
+  if (currentDisplayValue.substr(-1) == ".") {
+    currentDisplayValue = currentDisplayValue.slice(0, -1);
+    currentDisplayElement.textContent = currentDisplayValue;
+  }
 });
+
+console.log(currentDisplayValue.substr(-1));
 
 one.addEventListener("click", function () {
   changeDisplayValue(+this.textContent);
@@ -104,3 +104,14 @@ nine.addEventListener("click", function () {
 zero.addEventListener("click", function () {
   changeDisplayValue(+this.textContent);
 });
+periodSymbol.addEventListener("click", function () {
+  if (currentDisplayValue.indexOf(".") < 0) {
+    changeDisplayValue(".");
+  }
+});
+
+let divideSymbol = document.getElementById("divide-symbol");
+let multiplySymbol = document.getElementById("multiply-symbol");
+let minusSymbol = document.getElementById("minus-symbol");
+let equalSymbol = document.getElementById("equal-symbol");
+let plusSymbol = document.getElementById("plus-symbol");
