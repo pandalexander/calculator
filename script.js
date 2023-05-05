@@ -224,12 +224,27 @@ divideSymbol.addEventListener("click", function () {
 });
 
 equalSymbol.addEventListener("click", function () {
-  if (oldDisplayValue != "") {
-    secondNumber = currentDisplayValue;
+  if (oldDisplayValue.includes("=")) {
+    // do nothing
+  } else if (oldDisplayValue != "") {
+    secondNumber = +currentDisplayValue;
     currentDisplayValue = operate(+firstNumber, operator, +secondNumber);
     currentDisplayElement.textContent = +currentDisplayValue;
     oldDisplayValue =
       firstNumber + " " + operator + " " + secondNumber + " " + "=";
     oldDisplayElement.textContent = oldDisplayValue;
+  }
+});
+
+let calcBody = document.getElementById("calc-body");
+
+calcBody.addEventListener("click", function () {
+  if (
+    currentDisplayValue == "Infinity" ||
+    oldDisplayValue.includes("Infinity")
+  ) {
+    clearDisplay();
+    alert("you can't do that, silly!");
+    //clearDisplay();
   }
 });
