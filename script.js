@@ -26,13 +26,13 @@ let secondNumber;
 
 const operate = function (firstNumber, operator, secondNumber) {
   if (operator == "+") {
-    return add(firstNumber, secondNumber);
+    return add(firstNumber, secondNumber).toFixed(2);
   } else if (operator == "-") {
-    return subtract(firstNumber, secondNumber);
+    return subtract(firstNumber, secondNumber).toFixed(2);
   } else if (operator == "*") {
-    return multiply(firstNumber, secondNumber);
+    return multiply(firstNumber, secondNumber).toFixed(2);
   } else if (operator == "/") {
-    return divide(firstNumber, secondNumber);
+    return divide(firstNumber, secondNumber).toFixed(2);
   }
 };
 
@@ -96,10 +96,7 @@ clearButton.addEventListener("click", function () {
 });
 
 deleteButton.addEventListener("click", function () {
-  console.log(currentDisplayValue);
   currentDisplayValue = String(currentDisplayValue);
-  console.log(currentDisplayValue);
-
   currentDisplayValue = currentDisplayValue.slice(0, -1);
   currentDisplayElement.textContent = currentDisplayValue;
 });
