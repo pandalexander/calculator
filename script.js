@@ -53,6 +53,9 @@ oldDisplayElement.textContent = oldDisplayValue;
 // The following code declares a function called "changeDisplayValue" that takes a parameter called "item". This function appends the provided "item" to the end of the currentDisplayValue variable, and sets the text content of currentDisplayElement to the new value of currentDisplayValue.
 
 let changeDisplayValue = function (item) {
+  if (oldDisplayValue.includes("=")) {
+    clearDisplay();
+  }
   currentDisplayValue += item;
   currentDisplayElement.textContent = currentDisplayValue;
 };
