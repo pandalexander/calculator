@@ -188,9 +188,6 @@ plusSymbol.addEventListener("click", function () {
 
 minusSymbol.addEventListener("click", function () {
   if (oldDisplayValue.includes("=") || oldDisplayValue == "") {
-    if ((currentDisplayValue = "")) {
-      currentDisplayValue = "0";
-    }
     firstNumber = +currentDisplayValue.toString();
     operator = "-";
     oldDisplayValue = firstNumber + " " + "-";
@@ -210,9 +207,6 @@ minusSymbol.addEventListener("click", function () {
 
 multiplySymbol.addEventListener("click", function () {
   if (oldDisplayValue.includes("=") || oldDisplayValue == "") {
-    if ((currentDisplayValue = "")) {
-      currentDisplayValue = "0";
-    }
     firstNumber = +currentDisplayValue.toString();
     operator = "*";
     oldDisplayValue = firstNumber + " " + "*";
@@ -232,9 +226,6 @@ multiplySymbol.addEventListener("click", function () {
 
 divideSymbol.addEventListener("click", function () {
   if (oldDisplayValue.includes("=") || oldDisplayValue == "") {
-    if ((currentDisplayValue = "")) {
-      currentDisplayValue = "0";
-    }
     firstNumber = +currentDisplayValue.toString();
     operator = "/";
     oldDisplayValue = firstNumber + " " + "/";
