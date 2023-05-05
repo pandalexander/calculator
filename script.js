@@ -81,6 +81,8 @@ let periodSymbol = document.getElementById("period-symbol");
 clearButton.addEventListener("click", function () {
   currentDisplayValue = "";
   currentDisplayElement.textContent = +currentDisplayValue;
+  oldDisplayValue = "";
+  oldDisplayElement.textContent = oldDisplayValue;
 });
 
 deleteButton.addEventListener("click", function () {
@@ -142,9 +144,6 @@ plusSymbol.addEventListener("click", function () {
   oldDisplayElement.textContent = oldDisplayValue;
   currentDisplayValue = "";
   currentDisplayElement.textContent = +currentDisplayValue;
-
-  console.log(firstNumber);
-  console.log(operator);
 });
 
 equalSymbol.addEventListener("click", function () {
