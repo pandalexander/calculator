@@ -1,4 +1,4 @@
-// The following code declares four functions that perform basic math operations: add, subtract, multiply, and divide.
+// The following code declares four functions that perform basic math operations: add, subtract, multiply, and divide. There is also a function that checks if a number is a decimal or not.
 
 const add = function (num1, num2) {
   return +num1 + +num2;
@@ -16,6 +16,10 @@ const divide = function (num1, num2) {
   return +num1 / +num2;
 };
 
+const isDecimal = function (number) {
+  return number % 1;
+};
+
 // The following lines of code declare three variables without any initial value: firstNumber, operator, and secondNumber.
 
 let firstNumber;
@@ -26,13 +30,29 @@ let secondNumber;
 
 const operate = function (firstNumber, operator, secondNumber) {
   if (operator == "+") {
-    return add(firstNumber, secondNumber).toFixed(2);
+    if (isDecimal(add(firstNumber, secondNumber)))
+      return add(firstNumber, secondNumber).toFixed(2);
+    else {
+      return add(firstNumber, secondNumber);
+    }
   } else if (operator == "-") {
-    return subtract(firstNumber, secondNumber).toFixed(2);
-  } else if (operator == "*") {
-    return multiply(firstNumber, secondNumber).toFixed(2);
-  } else if (operator == "/") {
-    return divide(firstNumber, secondNumber).toFixed(2);
+    if (isDecimal(subtract(firstNumber, secondNumber)))
+      return subtract(firstNumber, secondNumber).toFixed(2);
+    else {
+      return subtract(firstNumber, secondNumber);
+    }
+  } else if (operator == "*")
+    if (isDecimal(multiply(firstNumber, secondNumber)))
+      return multiply(firstNumber, secondNumber).toFixed(2);
+    else {
+      return multiply(firstNumber, secondNumber);
+    }
+  else if (operator == "/") {
+    if (isDecimal(divide(firstNumber, secondNumber)))
+      return divide(firstNumber, secondNumber).toFixed(2);
+    else {
+      return divide(firstNumber, secondNumber);
+    }
   }
 };
 
