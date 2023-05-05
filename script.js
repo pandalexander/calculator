@@ -184,6 +184,25 @@ minusSymbol.addEventListener("click", function () {
   }
 });
 
+multiplySymbol.addEventListener("click", function () {
+  if (oldDisplayValue.includes("=") || oldDisplayValue == "") {
+    firstNumber = currentDisplayValue;
+    operator = "*";
+    oldDisplayValue = currentDisplayValue + " " + "*";
+    oldDisplayElement.textContent = oldDisplayValue;
+    currentDisplayValue = "";
+    currentDisplayElement.textContent = +currentDisplayValue;
+  } else {
+    secondNumber = currentDisplayValue;
+    firstNumber = operate(+firstNumber, operator, +secondNumber);
+    operator = "*";
+    currentDisplayValue = "";
+    currentDisplayElement.textContent = +currentDisplayValue;
+    oldDisplayValue = firstNumber + " " + operator;
+    oldDisplayElement.textContent = oldDisplayValue;
+  }
+});
+
 equalSymbol.addEventListener("click", function () {
   if (oldDisplayValue != "") {
     secondNumber = currentDisplayValue;
