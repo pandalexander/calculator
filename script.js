@@ -83,6 +83,9 @@ let clearDisplay = function () {
   currentDisplayElement.textContent = +currentDisplayValue;
   oldDisplayValue = "";
   oldDisplayElement.textContent = oldDisplayValue;
+  firstNumber = "";
+  operator = "";
+  secondNumber = "";
 };
 
 clearButton.addEventListener("click", function () {
@@ -141,13 +144,22 @@ let equalSymbol = document.getElementById("equal-symbol");
 let plusSymbol = document.getElementById("plus-symbol");
 
 plusSymbol.addEventListener("click", function () {
-  firstNumber = currentDisplayValue;
-  operator = "+";
-
-  oldDisplayValue = currentDisplayValue + " " + "+";
-  oldDisplayElement.textContent = oldDisplayValue;
-  currentDisplayValue = "";
-  currentDisplayElement.textContent = +currentDisplayValue;
+  if (oldDisplayValue.includes("=") || oldDisplayValue == "") {
+    firstNumber = currentDisplayValue;
+    operator = "+";
+    oldDisplayValue = currentDisplayValue + " " + "+";
+    oldDisplayElement.textContent = oldDisplayValue;
+    currentDisplayValue = "";
+    currentDisplayElement.textContent = +currentDisplayValue;
+  } else {
+    secondNumber = currentDisplayValue;
+    firstNumber = operate(+firstNumber, operator, +secondNumber);
+    operator = "+";
+    currentDisplayValue = "";
+    currentDisplayElement.textContent = +currentDisplayValue;
+    oldDisplayValue = firstNumber + " " + operator;
+    oldDisplayElement.textContent = oldDisplayValue;
+  }
 });
 
 equalSymbol.addEventListener("click", function () {
