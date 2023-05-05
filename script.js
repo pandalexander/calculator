@@ -169,9 +169,9 @@ let plusSymbol = document.getElementById("plus-symbol");
 
 plusSymbol.addEventListener("click", function () {
   if (oldDisplayValue.includes("=") || oldDisplayValue == "") {
-    firstNumber = currentDisplayValue;
+    firstNumber = +currentDisplayValue.toString();
     operator = "+";
-    oldDisplayValue = currentDisplayValue + " " + "+";
+    oldDisplayValue = firstNumber + " " + "+";
     oldDisplayElement.textContent = oldDisplayValue;
     currentDisplayValue = "";
     currentDisplayElement.textContent = +currentDisplayValue;
@@ -188,9 +188,12 @@ plusSymbol.addEventListener("click", function () {
 
 minusSymbol.addEventListener("click", function () {
   if (oldDisplayValue.includes("=") || oldDisplayValue == "") {
-    firstNumber = currentDisplayValue;
+    if ((currentDisplayValue = "")) {
+      currentDisplayValue = "0";
+    }
+    firstNumber = +currentDisplayValue.toString();
     operator = "-";
-    oldDisplayValue = currentDisplayValue + " " + "-";
+    oldDisplayValue = firstNumber + " " + "-";
     oldDisplayElement.textContent = oldDisplayValue;
     currentDisplayValue = "";
     currentDisplayElement.textContent = +currentDisplayValue;
@@ -207,9 +210,12 @@ minusSymbol.addEventListener("click", function () {
 
 multiplySymbol.addEventListener("click", function () {
   if (oldDisplayValue.includes("=") || oldDisplayValue == "") {
-    firstNumber = currentDisplayValue;
+    if ((currentDisplayValue = "")) {
+      currentDisplayValue = "0";
+    }
+    firstNumber = +currentDisplayValue.toString();
     operator = "*";
-    oldDisplayValue = currentDisplayValue + " " + "*";
+    oldDisplayValue = firstNumber + " " + "*";
     oldDisplayElement.textContent = oldDisplayValue;
     currentDisplayValue = "";
     currentDisplayElement.textContent = +currentDisplayValue;
@@ -226,9 +232,12 @@ multiplySymbol.addEventListener("click", function () {
 
 divideSymbol.addEventListener("click", function () {
   if (oldDisplayValue.includes("=") || oldDisplayValue == "") {
-    firstNumber = currentDisplayValue;
+    if ((currentDisplayValue = "")) {
+      currentDisplayValue = "0";
+    }
+    firstNumber = +currentDisplayValue.toString();
     operator = "/";
-    oldDisplayValue = currentDisplayValue + " " + "/";
+    oldDisplayValue = firstNumber + " " + "/";
     oldDisplayElement.textContent = oldDisplayValue;
     currentDisplayValue = "";
     currentDisplayElement.textContent = +currentDisplayValue;
@@ -261,7 +270,9 @@ let calcBody = document.getElementById("calc-body");
 calcBody.addEventListener("click", function () {
   if (
     currentDisplayValue == "Infinity" ||
-    oldDisplayValue.includes("Infinity")
+    oldDisplayValue.includes("Infinity") ||
+    currentDisplayElement.textContent == "NaN" ||
+    oldDisplayValue.includes("NaN")
   ) {
     clearDisplay();
     alert("you can't do that, silly!");
