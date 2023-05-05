@@ -42,7 +42,7 @@ let currentDisplayValue = "";
 
 let currentDisplayElement = document.getElementById("display-current");
 
-currentDisplayElement.textContent = currentDisplayValue;
+currentDisplayElement.textContent = +currentDisplayValue;
 
 let oldDisplayValue = "";
 
@@ -133,3 +133,27 @@ let multiplySymbol = document.getElementById("multiply-symbol");
 let minusSymbol = document.getElementById("minus-symbol");
 let equalSymbol = document.getElementById("equal-symbol");
 let plusSymbol = document.getElementById("plus-symbol");
+
+plusSymbol.addEventListener("click", function () {
+  firstNumber = currentDisplayValue;
+  operator = "+";
+
+  oldDisplayValue = currentDisplayValue + " " + "+";
+  oldDisplayElement.textContent = oldDisplayValue;
+  currentDisplayValue = "";
+  currentDisplayElement.textContent = +currentDisplayValue;
+
+  console.log(firstNumber);
+  console.log(operator);
+});
+
+equalSymbol.addEventListener("click", function () {
+  if (oldDisplayValue != "") {
+    secondNumber = currentDisplayValue;
+    currentDisplayValue = operate(+firstNumber, operator, +secondNumber);
+    currentDisplayElement.textContent = +currentDisplayValue;
+    oldDisplayValue =
+      firstNumber + " " + operator + " " + secondNumber + " " + "=";
+    oldDisplayElement.textContent = oldDisplayValue;
+  }
+});
