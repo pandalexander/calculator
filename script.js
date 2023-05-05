@@ -78,11 +78,15 @@ let periodSymbol = document.getElementById("period-symbol");
 
 // The following code adds event listeners to the clearButton and deleteButton HTML elements. When clicked, the clearButton event listener sets currentDisplayValue to an empty string and updates the text content of currentDisplayElement. The deleteButton event listener removes the last character from currentDisplayValue and updates the text content of currentDisplayElement.
 
-clearButton.addEventListener("click", function () {
+let clearDisplay = function () {
   currentDisplayValue = "";
   currentDisplayElement.textContent = +currentDisplayValue;
   oldDisplayValue = "";
   oldDisplayElement.textContent = oldDisplayValue;
+};
+
+clearButton.addEventListener("click", function () {
+  clearDisplay();
 });
 
 deleteButton.addEventListener("click", function () {
