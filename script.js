@@ -36,13 +36,19 @@ const operate = function (firstNumber, operator, secondNumber) {
   }
 };
 
-// The following lines of code declare two variables: currentDisplayValue and currentDisplayElement. currentDisplayValue is initially set to an empty string, and currentDisplayElement is set to the HTML element with an id of "display-current". The value of currentDisplayValue is then converted to a number using the + operator and set as the text content of currentDisplayElement.
+// The following lines of code declare four variables: currentDisplayValue and currentDisplayElement, oldDisplayValue and oldDisplayElement. currentDisplayValue is initially set to an empty string, and currentDisplayElement is set to the HTML element with an id of "display-current". The value of currentDisplayValue is then set as the text content of currentDisplayElement. The same is done for the older values.
 
 let currentDisplayValue = "";
 
 let currentDisplayElement = document.getElementById("display-current");
 
-currentDisplayElement.textContent = +currentDisplayValue;
+currentDisplayElement.textContent = currentDisplayValue;
+
+let oldDisplayValue = "";
+
+let oldDisplayElement = document.getElementById("display-old");
+
+oldDisplayElement.textContent = oldDisplayValue;
 
 // The following code declares a function called "changeDisplayValue" that takes a parameter called "item". This function appends the provided "item" to the end of the currentDisplayValue variable, and sets the text content of currentDisplayElement to the new value of currentDisplayValue.
 
