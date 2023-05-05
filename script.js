@@ -224,7 +224,9 @@ divideSymbol.addEventListener("click", function () {
 });
 
 equalSymbol.addEventListener("click", function () {
-  if (oldDisplayValue != "") {
+  if (currentDisplayValue == 0) {
+    // do nothing
+  } else if (oldDisplayValue != "") {
     secondNumber = currentDisplayValue;
     currentDisplayValue = operate(+firstNumber, operator, +secondNumber);
     currentDisplayElement.textContent = +currentDisplayValue;
