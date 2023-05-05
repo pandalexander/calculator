@@ -1,3 +1,5 @@
+// The following code declares four functions that perform basic math operations: add, subtract, multiply, and divide.
+
 const add = function (num1, num2) {
   return +num1 + +num2;
 };
@@ -14,9 +16,13 @@ const divide = function (num1, num2) {
   return +num1 / +num2;
 };
 
+// The following lines of code declare three variables without any initial value: firstNumber, operator, and secondNumber.
+
 let firstNumber;
 let operator;
 let secondNumber;
+
+// The following code declares a function called "operate" that takes three parameters: firstNumber, operator, and secondNumber. This function calls one of the four previously declared math functions based on the provided operator, and returns the result of the operation.
 
 const operate = function (firstNumber, operator, secondNumber) {
   if (operator == "+") {
@@ -30,16 +36,22 @@ const operate = function (firstNumber, operator, secondNumber) {
   }
 };
 
+// The following lines of code declare two variables: currentDisplayValue and currentDisplayElement. currentDisplayValue is initially set to an empty string, and currentDisplayElement is set to the HTML element with an id of "display-current". The value of currentDisplayValue is then converted to a number using the + operator and set as the text content of currentDisplayElement.
+
 let currentDisplayValue = "";
 
 let currentDisplayElement = document.getElementById("display-current");
 
 currentDisplayElement.textContent = +currentDisplayValue;
 
+// The following code declares a function called "changeDisplayValue" that takes a parameter called "item". This function appends the provided "item" to the end of the currentDisplayValue variable, and sets the text content of currentDisplayElement to the new value of currentDisplayValue.
+
 let changeDisplayValue = function (item) {
   currentDisplayValue += item;
   currentDisplayElement.textContent = currentDisplayValue;
 };
+
+// The following lines of code declare variables for various HTML elements: clearButton, deleteButton, calcButtonsParent, and several number buttons. Each of these variables is set to the corresponding HTML element using document.getElementById().
 
 let clearButton = document.getElementById("clear");
 let deleteButton = document.getElementById("delete");
@@ -58,6 +70,8 @@ let nine = document.getElementById("nine");
 let zero = document.getElementById("zero");
 let periodSymbol = document.getElementById("period-symbol");
 
+// The following code adds event listeners to the clearButton and deleteButton HTML elements. When clicked, the clearButton event listener sets currentDisplayValue to an empty string and updates the text content of currentDisplayElement. The deleteButton event listener removes the last character from currentDisplayValue and updates the text content of currentDisplayElement.
+
 clearButton.addEventListener("click", function () {
   currentDisplayValue = "";
   currentDisplayElement.textContent = +currentDisplayValue;
@@ -67,6 +81,8 @@ deleteButton.addEventListener("click", function () {
   currentDisplayValue = currentDisplayValue.slice(0, -1);
   currentDisplayElement.textContent = currentDisplayValue;
 });
+
+// The following lines of code add event listeners to each of the number buttons. When clicked, these event listeners call the changeDisplayValue() function with the value of the clicked button as the "item" parameter.
 
 one.addEventListener("click", function () {
   changeDisplayValue(+this.textContent);
@@ -103,6 +119,8 @@ periodSymbol.addEventListener("click", function () {
     changeDisplayValue(".");
   }
 });
+
+// The following lines of code declare variables for various HTML elements that represent mathematical symbols: divideSymbol, multiplySymbol, minusSymbol, equalSymbol, and plusSymbol. Each of these variables is set to the corresponding HTML element using document.getElementById().
 
 let divideSymbol = document.getElementById("divide-symbol");
 let multiplySymbol = document.getElementById("multiply-symbol");
