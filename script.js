@@ -77,7 +77,7 @@ let changeDisplayValue = function (item) {
     clearDisplay();
   }
   currentDisplayValue += item;
-  currentDisplayElement.textContent = currentDisplayValue;
+  currentDisplayElement.textContent = +currentDisplayValue;
 };
 
 // The following lines of code declare variables for various HTML elements: clearButton, deleteButton, calcButtonsParent, and several number buttons. Each of these variables is set to the corresponding HTML element using document.getElementById().
